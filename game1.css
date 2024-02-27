@@ -1,0 +1,101 @@
+body {
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #000;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+.cell.taken {
+    pointer-events: none;
+    background-color: #444;
+}
+
+button {
+    font-size: 20px;
+    padding: 12px 24px;
+    background-color: #ff5722;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff7043;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0% {
+      transform: translateY(-500px);
+    }
+    70% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    color: #fff;
+    animation: bounceIn 0.5s;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
